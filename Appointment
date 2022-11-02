@@ -1,0 +1,43 @@
+from Employee import Employee
+from Patient import Patient
+from Doctor import Doctor 
+
+class Appointment(Doctor,Employee,Patient):
+
+   def __init__(self, date, department):
+      Employee().__init__(self, first, last, phone, email, DoB, address, role, shift):
+      Doctor().__init__(self, name, role, DoB, email,phone, shift, availavility)
+      Patient().__init__(self, history, treatment, urgence, name, DoB, gender )
+
+      self.date= date
+      self.department= department
+
+      self.appointments=[]
+      if isinstance (appointments, Appointment):
+        self.appointments.append(appointment)
+      elif isinstance (appointment, list):
+        for entry in appointment:
+            if not isinstance(entry, Appointment):
+                raise Error("invalid appointment")
+        self.appointments= appointment
+      else:
+        raise Error("Invalid Appointment")
+   
+      def date(self):
+         return f"my schedule appointment is on{self.date}"
+      
+      def department(self):
+         return f'I want an appointment at {self.department}'
+
+    
+      def create_appointment(self):
+       date= ["M", "t","w", "Th", "F", "sat", "s"]
+      time= [8,9,10,11,12,13,14,15]
+      for d in date:
+       for t in time:
+        cursor.executescript(f"INSERT INTO Appointment (date, time) value('{date}'{time})")
+
+      def list_appointment(self):
+          return len(self.appointment)
+
+      

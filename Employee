@@ -1,0 +1,75 @@
+
+from Person import Person
+
+class Employee(Person):
+    def __init__(self, first, last, phone, email, DoB, address, role, shift):
+     Person().__init__(self, first, last, phone, email, DoB, address):
+     
+     self.role= role
+     self.shift= shift
+     
+        
+        
+    def name(self):
+         return f" my name is {self.name}"
+      
+    def role(self):
+         return f"I have a specialty in {self.role}"
+      
+    def shift(self):
+         return f"my phone nb is {self.shift}"
+      
+    def email(self):
+         return f"my email is {self.email}"
+        
+    
+     def login(self, username, password):
+        get_conn()
+        self.username= username
+        self.password= password
+        
+        if username==username and password== password :
+                print("login successful!")
+    
+    
+    def register (self, username, password, email):
+        get_conn()
+
+        self.username= username
+        self.password= password
+        self.pass_check= password
+        self.email= email 
+        cursor.executescript(" INSERT INTO Employee if does not exist (username) value ({self.username})")
+        if username exists:
+            print("invalid username")
+        else:
+            print("valid username")    
+            if password== pass_check:
+             print("Password match, you can login")
+            else:
+             print("pass doesn't match")
+             cursor.executescript(" INSERT INTO Employee if does not exist (email) value ({self.email})")
+             if email exists:
+                print("choose another email")
+             else:
+                print("succesfully registred username")
+        
+        if password== pass_check:
+             print("Password match, you can login")
+        else:
+            print("pass doesn't match")
+    
+     def logout(self)
+          get_conn()
+          result= "are u sure u want to exit"
+          if result==yes:
+               root.destory()
+               exit()   
+     
+     def get_patient(self):
+          if first==self.first_name or last== self.last_name or phone= self.phone:
+               return "here is your result"
+          else:
+               return "invalid search"
+          
+

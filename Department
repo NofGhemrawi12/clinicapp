@@ -1,0 +1,23 @@
+from Connection import get_conn
+
+
+class Department:
+   def __init__(self, title):
+      self.title= title
+        
+   def title(self):
+      return f"my department title is {self.title}"
+        
+dep1= Department("Cardio and Cerebrovascular diseases department" )
+dep1.title= "Cardio and Cerebrovascular diseases department"
+print(dep1.department())
+
+   get_conn()
+   def insert_data(sqliteConnection):
+#department
+     title= ["neurology", "cardiology","infection control"]  
+     for tit in title:
+      cursor.executescript(f"INSERT INTO Appointment (title) value('{title}')")
+      cursor.commit()
+       #fetch data
+      print(cursor.fetchall()) 

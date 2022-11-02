@@ -1,0 +1,10 @@
+from types import CoroutineType
+
+
+class Address():
+    def_init__(self, country, governerate, city, street):
+    self.country= country
+    self.governerate= governerate
+    self.city= City 
+    self.street= street 
+    

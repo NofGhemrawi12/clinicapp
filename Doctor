@@ -1,0 +1,96 @@
+from Connection import get_conn
+from Person import Person
+from Department import Department
+
+class Doctor(Person, Department):
+
+   def __init__(self,first, last, phone, email, DoB, address, role, shift, availability):
+      Person().__init__(self, first, last, phone, email, DoB, address):
+      Department().__init__(self, title):
+
+      self.role= role
+      self.shift = shift
+      self.availability= availability
+       
+        
+   def name(self):
+         return f" my name is {self.name}"
+      
+   def role(self):
+         return f"I have a specialty in {self.role}"
+      
+   def phone(self):
+         return f"my phone nb is {self.phone}"
+      
+   def email(self):
+         return f"my email is {self.email}"
+      
+   def availability(self):
+         return f"I am available at{self.availability}"
+        
+   def register (self, username, password, email):
+        get_conn()
+
+        self.username= username
+        self.password= password
+        self.pass_check= password
+        self.email= email 
+        cursor.executescript(" INSERT INTO Doctor if does not exist (username) value ({self.username})")
+        if username exists:
+            print("invalid username")
+        else:
+            print("valid username")    
+            if password== pass_check:
+             print("Password match, you can login")
+            else:
+             print("pass doesn't match")
+             cursor.executescript(" INSERT INTO Doctor if does not exist (email) value ({self.email})")
+             if email exists:
+                print("choose another email")
+             else:
+                print("succesfully registred username")
+
+   def Read(self):
+      get_conn()
+      cursor = sqliteConnection.cursor()
+      cursor.execute("SELECT * FROM Doctor")
+      cursor.fetch()
+
+      
+   def insert_data(sqliteConnection):
+    
+    
+  #insert data into dr table 
+   #name
+    my_name_list = ["hiyam", "mohamad", "majed", "salam"]
+   for name in my_name_list:
+    cursor.executescript( f"INSERT INTO Doctor(name) value ('{my_name_list}')")
+    #role
+    my_role_list= ["neurlogist", "cardiologist", "hematologist", "psychologist"]
+   for role in my_role_list:
+     cursor.executescript(f"INSERT INTO Doctor (role) value('{my_role_list}')")
+   #date and time  
+   date= ["M", "t","w", "Th", "F", "sat", "s"]
+   time= [8,9,10,11,12,13,14,15]
+   for d in date:
+    for t in time:
+       cursor.executescript(f"INSERT INTO Doctor (date, time) value('{date}'{time})") 
+       
+  #phone
+   dr_phone_nb= [1468686, 6529797,749797,7979]
+   for nb in dr_phone_nb:
+    cursor.executescript(f"INSERT INTO Doctor (phone) value({dr_phone_nb})")
+    
+  #email
+   dr_email= ["guqguq@v", "dyfy@bbk","gugufu@jvj", "fufuf@gxg"]
+   for email in dr_email:
+    cursor.executescript(f"INSERT INTO Doctor (email) value({dr_email})")
+    #save
+    cursor.commit()
+    cursor.execute(SELECT * from Doctor)
+    print(cursor.fetchall()) 
+    cursor.executescript(SELECT (phone) from Doctor WHERE name="mohamad" ) 
+    print(cursor.fetchone())
+
+
+

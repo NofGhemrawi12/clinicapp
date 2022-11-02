@@ -1,0 +1,128 @@
+#I want to inherit features from person class 
+from genericpath import exists
+from Connection import get_conn
+from Person import Person
+
+
+#I want to inherit features from Doctor class 
+from Doctor import Doctor
+
+class Patient (Person, Doctor):
+    def __init__(self, first, last, phone, email, DoB, address, gender, history, treatment, urgency):
+        Person().__init__(self,first, last, phone, email, DoB, address)
+        Doctor().__init__(self, shift, availability)
+        
+        self.gender= gender
+        self.history= history
+        self. treatment= treatment
+        self.urgency= urgency
+        
+    def name(self):
+        return f"my name is {self.name}"
+    
+    def age(self):
+        return f"Iam {self.age} years old"
+    
+    def gender(self):
+        return f"I am {self.gender}"
+    
+    def history(self):
+        return f"I had diagnosed with {self.history}"
+    
+    def phone(self):
+        return f"my phone nb is {self.phone}"
+    
+    def email(self):
+        return f" my email is {self.email}"
+    def urgency(self):
+        return f"my urgency case is {self.urgency}"
+
+    def add_pat-doc(self, doctor):
+    if not isinstance(doctor, Doctor):
+        raise Error (" invalid doctor") 
+
+
+    
+    
+    def register (self, username, password, email):
+        get_conn()
+
+        self.username= username
+        self.password= password
+        self.pass_check= password
+        self.email= email 
+        cursor.executescript(" INSERT INTO Patients if does not exist (username) value ({self.username})")
+        if username exists:
+            print("invalid username")
+        else:
+            print("valid username")    
+            if password== pass_check:
+             print("Password match, you can login")
+            else:
+             print("pass doesn't match")
+             cursor.executescript(" INSERT INTO Patients if does not exist (email) value ({self.email})")
+             if email exists:
+                print("choose another email")
+             else:
+                print("succesfully registred username")
+
+        
+    def get_patient(self):
+          get_conn()
+          if first==self.first_name or last== self.last_name or phone= self.phone:
+               return "here is your patient"
+          else:
+               return "invalid search"
+          
+        def insert_data(sqliteConnection):
+
+           ##patient table
+    #name
+         my_patient_list = ["kamal", "nof", "nourhane", "rahaf"]
+         for name in my_name_list:
+          cursor.executescript( f"INSERT INTO Patient(name) value ('{my_patient_list}')")
+ #role
+          my_history_list= ["diabetes", "anemia", "depression", "thalassemia"]
+          for hist in my_history_list:
+           cursor.executescript(f"INSERT INTO Patient (history) value('{my_history_list}')")
+           cursor.commit()
+ #fetch
+          cursor.execute(SELECT (history) from Doctor)
+          print(cursor.fetchmany(2))
+       
+#phone
+         pat_phone_nb= [1468686, 6529797,749797,7979]
+         for nb in pat_phone_nb:
+          cursor.executescript(f"INSERT INTO Patient (phone) value({pat_phone_nb})")
+    
+#email
+         pat_email= ["guqguq@v", "dyfy@bbk","gugufu@jvj", "fufuf@gxg"]
+        for email in pat_email:
+          cursor.executescript(f"INSERT INTO Patient (email) value({pat_email})")
+    
+#urgency
+        urgency= ["low", "medium", "high"]
+        for urg in urgency:
+         cursor.executescript(f"INSERT INTO Patient (urgency) value('{urgency}')")
+    
+         cursor.commit()
+
+                                 ###department table 
+        title= ["neurology", "cardiology","infection control"]  
+        for tit in title:
+         cursor.executescript(f"INSERT INTO Department (title) value('{title}')")
+         cursor.commit() 
+         print(cursor.fetchall())  
+  
+                                         ##appoitment table
+#date
+         date= ["M", "t","w", "Th", "F", "sat", "s"]
+         time= [8,9,10,11,12,13,14,15]
+         for d in date:
+           for t in time:
+            cursor.executescript(f"INSERT INTO Appointment (date, time) value('{date}'{time})")
+
+       
+        
+
+        
