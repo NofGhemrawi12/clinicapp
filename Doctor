@@ -1,3 +1,4 @@
+from xml.dom.minidom import Entity
 from Connection import get_conn
 from Person import Person
 from Department import Department
@@ -27,28 +28,28 @@ class Doctor(Person, Department):
       
    def availability(self):
          return f"I am available at{self.availability}"
+   
+    #inherit a class from employee table 
+   Entity
+   Inheritance = (strategy= Inheritancetype.TABLE_PER_CLASS)
+   public class  abstract AbsT {
+         Id Long id;
+   }
+   Entity
+   table (name= "Employee")
+   public class Employee extends AbsT {
+         
+   }
+   Entity
+   table (name= "Doctor")
+   public class Doctor extends AbsT {
+         
+   }
+   
+             
         
-   def register (self, username, password, email):
-        get_conn()
-
-        self.username= username
-        self.password= password
-        self.pass_check= password
-        self.email= email 
-        cursor.executescript(" INSERT INTO Doctor if does not exist (username) value ({self.username})")
-        if username exists:
-            print("invalid username")
-        else:
-            print("valid username")    
-            if password== pass_check:
-             print("Password match, you can login")
-            else:
-             print("pass doesn't match")
-             cursor.executescript(" INSERT INTO Doctor if does not exist (email) value ({self.email})")
-             if email exists:
-                print("choose another email")
-             else:
-                print("succesfully registred username")
+        
+       
 
    def Read(self):
       get_conn()

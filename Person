@@ -5,12 +5,12 @@ from Address import Address
 
 class Person():
     def__init__(self, first, last, phone, email, DoB, address):
-    self.first_name= first
-    self.last_name= last
-    self.phone= phone
-    self.email= email
+    self.first_name  = first
+    self.last_name   = last
+    self.phone       = phone
+    self.email       = email
     self.date_of_birth= date 
-    self.addresses=[]
+    self.addresses   =[]
 
     if isinstance (address, Address):
         self.adresses.append(address)

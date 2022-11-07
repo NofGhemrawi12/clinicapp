@@ -22,7 +22,7 @@ CREATE TABLE Doctor(
 CREATE TABLE Doc_Shift (
     doc_id INTEGER NOT NULL,
     shift DATETIME NOT NULL,
-        availability DATETIME NOT NULL,
+    availability DATETIME NOT NULL,
 
 )
 /* CREATE INDEX doctor_id on Doctor (ID)*/
@@ -30,10 +30,10 @@ CREATE TABLE Doc_Shift (
 CREATE TABLE patient(
     ID INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
-         country TEXT NOT NULL,
-     governerate TEXT NOT NULL,
-     city TEXT NOT NULL,
-     street TEXT NOT NULL,
+    country TEXT NOT NULL,
+    governerate TEXT NOT NULL,
+    city TEXT NOT NULL,
+    street TEXT NOT NULL,
     phone INTEGER NOT NULL,
     DoB DATETIME NOT NULL,
     history TEXT NOT NULL,

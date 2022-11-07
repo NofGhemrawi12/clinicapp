@@ -12,10 +12,10 @@ class Patient (Person, Doctor):
         Person().__init__(self,first, last, phone, email, DoB, address)
         Doctor().__init__(self, shift, availability)
         
-        self.gender= gender
-        self.history= history
-        self. treatment= treatment
-        self.urgency= urgency
+        self.gender      = gender
+        self.history     = history
+        self.treatment   = treatment
+        self.urgency     = urgency
         
     def name(self):
         return f"my name is {self.name}"
@@ -41,41 +41,45 @@ class Patient (Person, Doctor):
     if not isinstance(doctor, Doctor):
         raise Error (" invalid doctor") 
 
-
+    
+    #inherit  user class from employee table (abstract method)
+    Entity
+    Inheritance = (strategy= Inheritancetype.TABLE_PER_CLASS)
+    public_class  abstract AbsT {
+         Id Long id;
+   }
+    Entity
+    table (name= "Employee")
+    public class Employee extends AbsT {
+         
+   }
+    Entity
+    table (name= "Doctor")
+    public class Doctor extends AbsT {
+         
+   }
     
     
-    def register (self, username, password, email):
-        get_conn()
-
-        self.username= username
-        self.password= password
-        self.pass_check= password
-        self.email= email 
-        cursor.executescript(" INSERT INTO Patients if does not exist (username) value ({self.username})")
-        if username exists:
-            print("invalid username")
-        else:
-            print("valid username")    
-            if password== pass_check:
-             print("Password match, you can login")
-            else:
-             print("pass doesn't match")
-             cursor.executescript(" INSERT INTO Patients if does not exist (email) value ({self.email})")
-             if email exists:
-                print("choose another email")
-             else:
-                print("succesfully registred username")
-
+    
+            
         
+        
+       
     def get_patient(self):
           get_conn()
-          if first==self.first_name or last== self.last_name or phone= self.phone:
-               return "here is your patient"
+          if name.get()= "" AND phone.get()= "" AND email.get() == UNIQUE:
+              print("get your patient")
           else:
-               return "invalid search"
-          
-        def insert_data(sqliteConnection):
-
+              cursor.executescript("INSERT INTO patient (name, phone, email) values (?, ?, ?)", str(name.get()), phone.get(), email.get())
+              if cursor.fetchall() = None:
+                  print("patient with unique values")
+              else:
+                  print("kindly use unique values")
+              
+              
+         
+    def insert_data(sqliteConnection):
+    get_conn() 
            ##patient table
     #name
          my_patient_list = ["kamal", "nof", "nourhane", "rahaf"]
@@ -94,12 +98,12 @@ class Patient (Person, Doctor):
          pat_phone_nb= [1468686, 6529797,749797,7979]
          for nb in pat_phone_nb:
           cursor.executescript(f"INSERT INTO Patient (phone) value({pat_phone_nb})")
-    
+         cursor.commit()
 #email
          pat_email= ["guqguq@v", "dyfy@bbk","gugufu@jvj", "fufuf@gxg"]
         for email in pat_email:
           cursor.executescript(f"INSERT INTO Patient (email) value({pat_email})")
-    
+        cursor.commit()
 #urgency
         urgency= ["low", "medium", "high"]
         for urg in urgency:
@@ -121,7 +125,7 @@ class Patient (Person, Doctor):
          for d in date:
            for t in time:
             cursor.executescript(f"INSERT INTO Appointment (date, time) value('{date}'{time})")
-
+           cursor.commit()
        
         
 
