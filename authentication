@@ -3,7 +3,11 @@
 from Connection import get_conn
 import jwt
 
-
+charater_type = { "Uppercase letters": "A-Z",
+                            "Lowercase letters": "a-z",
+                            "Numbers": 0-9,
+                            "Symbols": ~`! @#$%^&*()_-+={[}]|\:;"'<,>.?/ }
+                            
 class authentication(self):
     
     def __init__(self, username, password, email, authentication):
@@ -46,41 +50,49 @@ class authentication(self):
             print("please enter the required fields")
         else:
             if type.get() == "doctor" :
-                cursor.executescript("INSERT INTO Doctor (username, password, email) values (?,?,?)", str(username.get()), str(password.get()), str(email.get()))
+                cursor.executescript("INSERT INTO Doctor (username, password,phone,role, email) values (?,?,?,?,?)", str(username.get()), str(password.get()), str(email.get()), str(role.get()),str(phone.get()))
             else if type.get() == "patient"
-                cursor.executescript("INSERT INTO Patient (username, password, email) values (?,?,?)", str(username.get()), str(password.get()), str(email.get()))
+                cursor.executescript("INSERT INTO Patient (username, password, email, country, city, street, DoB, governerate, phone, history, urgency) values (?,?,?,?,?,?,?,?,?,?,?)", str(username.get()), str(password.get()), str(email.get()),str(country.get()),str(governerate.get()),str(city.get()), str(street.get()),str(DoB.get())str(phone.get())str(history.get()),str(urgence.get()))
             else 
-                cursor.executescript("INSERT INTO Employee (username, password, email) values (?,?,?)", str(username.get()), str(password.get()), str(email.get()))
+                cursor.executescript("INSERT INTO Employee (username, role, phone, password, email) values (?,?,?,?,?)", str(username.get()), str(password.get()), str(email.get())),str(role.get(), str(phone.get()))
 
-            if cursor.fetchone() != None:
-               print("this username is already taken")
+            if username.get()!= None or email.get()!= None or phone.get()!= None:
+               print("this info is already exist, try again")
             else:
+                print(" info uniqueness is successfully checked")
+            cursor.commit()
         
             # pass valiidity condition
-            if password is instance character_type ==>3:
-            charater_type = { "Uppercase letters": "A-Z",
-                            "Lowercase letters": "a-z",
-                            "Numbers": 0-9,
-                            "Symbols": ~`! @#$%^&*()_-+={[}]|\:;"'<,>.?/ }
-                print("password is valid ")
-            else:
-                if password= None:
-                print("invalid password")
+            if password != None:
+                if password is instance character_type ==>3:
+                    print("password is valid ")
+                elif password!= character_type:
+                    print("password does not much the whole criteria")
                 else:
-                    print("create a valid password")
+                    print("password charater should be >3 charaters") 
+            elif password == None:
+                print("please enter the required field") 
+            
+            else:
+                print("unable to register, wrong email")
             cursor.commit()
             get_conn().close
         
-    def login(self, username, password):
+    def login(self, username, password, email):
         get_conn()
         self.username= username
         self.password= password
-        cursor.executescripte("SELECT * FROM `Employee` WHERE username = {{self.username}} AND password = {{self.password }}")
+        self.email= email
         
-        if username.get() = "" or password.get() = "" :
-                print("login successful!")
+        if username.get() == "" or password.get() == "" or email.get()=="":
+                print("enter the required field!")
         else:
-             cursor.executescript("INSERT INTO Employee (username, password) values (?,?,?)", str(username.get()), str(password.get())
+            if type.get()== "Doctor":
+                cursor.executescripte("SELECT * FROM `Doctor` WHERE username = {{self.username}} AND password = {{self.password }}AND {{self.email}}")
+            if type.get()== "patient":
+                cursor.executescripte("SELECT * FROM `Patient` WHERE username = {{self.username}} AND password = {{self.password }}AND {{self.email}}")
+            if type.get()== "Employee":
+                cursor.executescripte("SELECT * FROM `Employee` WHERE username = {{self.username}} AND password = {{self.password }}AND {{self.email}}")
              cursor.fetchall()
              cursor.commit()
          
@@ -88,6 +100,6 @@ class authentication(self):
     def logout(self)
           get_conn()
           result= "are u sure u want to exit"
-          if result==yes:
+          if result==True:
                root.destory()
                exit()
